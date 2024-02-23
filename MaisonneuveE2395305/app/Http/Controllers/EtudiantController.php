@@ -55,8 +55,28 @@ class EtudiantController extends Controller
      */
     public function update(Request $request, Etudiant $etudiant)
     {
-        //
+        $request->validate([
+            'nom' => 'required|string|max:191',
+            'adresse' => 'required|string',
+            'telephone' => 'nullable|string|max:20',
+            'email' => 'nullable|email',
+            'date_de_naissance' => 'nullable|date',
+            'ville_id' => 'nullable|integer'
+        ]);
+        
+
+        $etudiant->update([
+            'nom' => $request->nom,
+            'adresse' => $request->adresse,
+            'telephone' => $request->telephone,
+            'email' => $request->email,
+            'date_de_naissance' => $request->date_de_naissance,
+            'ville_id' => $request->ville_id
+        ]);
+
+        return redirect()->route('etudiant.show', $etudiant->id)->with('success', 'Etudiant updated successfully!');
     }
+    
 
     /**
      * Remove the specified resource from storage.

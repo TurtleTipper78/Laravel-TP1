@@ -22,3 +22,6 @@ Route::get('/', function () {
 Route::get('/ville', [VilleController::class, 'index'])->name('indexVille');
 Route::get('/etudiant', [EtudiantController::class, 'index'])->name('etudiant.index');
 Route::get('/etudiant/show/{etudiant}', [EtudiantController::class, 'show'])->name('etudiant.show');
+Route::delete('/etudiant/{etudiant}', [EtudiantController::class, 'delete'])->name('etudiant.delete');
+Route::get('/edit/etudiant/{etudiant}', [EtudiantController::class, 'edit'])->name('etudiant.edit');
+Route::put('/edit/etudiant/{etudiant}', [EtudiantController::class, 'update'])->name('etudiant.update');
