@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use app\Http\Controller\EtudiantController;
-use app\Http\Controller\VilleController;
+use App\Http\Controllers\EtudiantController;
+use App\Http\Controllers\VilleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +16,9 @@ use app\Http\Controller\VilleController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('etudiant.index');
 });
 
-Route::get('/ville', [VilleController::class, 'index'])->name('ville.index');
+Route::get('/ville', [VilleController::class, 'index'])->name('indexVille');
 Route::get('/etudiant', [EtudiantController::class, 'index'])->name('etudiant.index');
+Route::get('/etudiant/show/{etudiant}', [EtudiantController::class, 'show'])->name('etudiant.show');

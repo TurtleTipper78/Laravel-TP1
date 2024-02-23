@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Etudiant;
 use Illuminate\Http\Request;
 
+
 class EtudiantController extends Controller
 {
     /**
@@ -13,7 +14,7 @@ class EtudiantController extends Controller
     public function index()
     {
         $etudiants = Etudiant::all(); 
-        return $etudiants;
+        return view('Etudiant.index', ['etudiant' => $etudiants]);
     }
 
     /**
@@ -37,15 +38,16 @@ class EtudiantController extends Controller
      */
     public function show(Etudiant $etudiant)
     {
-        //
+        return view('etudiant.show', ['etudiant' => $etudiant]);
     }
+
 
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(Etudiant $etudiant)
     {
-        //
+        return view('etudiant.edit', ['etudiant' => $etudiant]);
     }
 
     /**
