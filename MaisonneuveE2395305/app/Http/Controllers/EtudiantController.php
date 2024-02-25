@@ -22,7 +22,7 @@ class EtudiantController extends Controller
      */
     public function create()
     {
-        //
+        return view('etudiant.create');
     }
 
     /**
@@ -30,8 +30,28 @@ class EtudiantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nom' => 'required|string|max:191',
+            'adresse' => 'required|string',
+            'telephone' => 'nullable|string|max:20',
+            'email' => 'nullable|email',
+            'date_de_naissance' => 'nullable|date',
+            'ville_id' => 'nullable|integer',
+        ]);
+
+        $etudiant = new Etudiant();
+        $etudiant->nom = $request->nom;
+        $etudiant->adresse = $request->adresse;
+        $etudiant->telephone = $request->input('telephone');
+        $etudiant->email = $request->input('email');
+        $etudiant->date_de_naissance = $request->input('date_de_naissance');
+        $etudiant->ville_id = $request->input('ville_id');
+
+        $etudiant->save();
+
+        return redirect()->route('etudiant.show', $etudiant->id)->with('success', 'Etudiant created successfully!');
     }
+
 
     /**
      * Display the specified resource.
@@ -83,6 +103,7 @@ class EtudiantController extends Controller
      */
     public function destroy(Etudiant $etudiant)
     {
-        //
+        $etudiant->delete();
+        return redirect()->route('etudiant.index')->with('success', 'Etudiant deleted successfully!');
     }
 }

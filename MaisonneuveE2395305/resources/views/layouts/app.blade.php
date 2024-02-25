@@ -8,20 +8,19 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
+        <nav class="navbar navbar-expand-sm navbar-light bg-light" aria-label="Third navbar example">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">{{ config('app.name') }}</a>
-                <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                <a class="navbar-brand" href="{{ route('etudiant.index') }}">{{ config('app.name') }}</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button> -->
-                <div class="collapse navbar-collapse" id="navbarsExample03">
-                    <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-sm-0">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
-                                aria-expanded="false">Étudiant</a>
-                            <ul class="dropdown-menu">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">Menu</a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="{{ route('etudiant.create') }}">Ajouter étudiant</a></li>
                                 <li><a class="dropdown-item" href="{{ route('etudiant.index') }}">Liste des étudiant</a></li>
                                 <li><a class="dropdown-item" href="{{ route('indexVille') }}">Liste des ville</a></li>
                             </ul>
