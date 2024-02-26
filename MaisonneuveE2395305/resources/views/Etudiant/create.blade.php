@@ -1,12 +1,12 @@
 @extends('layouts.app')
 @section('title', 'Ajout Etudiant')
 @section('content')
-    <h1 class="mt-5 mb-4">Ajouter un etudiant</h1>
+    <h1 class="mt-5 mb-4 text-center">Ajouter un étudiant</h1>
     <div class="row justify-content-center mt-5 mb-5">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">
-                    <h5 class="card-title">Ajouter un etudiant</h5>
+                <div class="card-header bg-light">
+                    <h5 class="card-title">Ajouter un étudiant</h5>
                 </div>
                 <div class="card-body">
                     <form action="{{ route('etudiant.store') }}" method="POST">

@@ -13,7 +13,7 @@ class VilleController extends Controller
     public function index()
     {
         $villes = Ville::all(); 
-        return view('indexVille', ['ville' => $villes]);
+        return view('ville.index', ['ville' => $villes]);
     }
 
     /**

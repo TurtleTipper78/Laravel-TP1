@@ -16,14 +16,15 @@ use App\Http\Controllers\VilleController;
 */
 
 Route::get('/', [EtudiantController::class, 'index'])->name('etudiant.index');
+Route::get('/ville', [VilleController::class, 'index'])->name('ville.index');
 
 Route::get('/etudiants', [EtudiantController::class, 'index'])->name('etudiant.index');
 Route::get('/etudiant/{etudiant}', [EtudiantController::class, 'show'])->name('etudiant.show');
-Route::get('/etudiant/create', [EtudiantController::class, 'create'])->name('etudiant.create');
+Route::get('/etudiants/create', [EtudiantController::class, 'create'])->name('etudiant.create');
 Route::post('/etudiant/store', [EtudiantController::class, 'store'])->name('etudiant.store');
 Route::get('/etudiant/edit/{etudiant}', [EtudiantController::class, 'edit'])->name('etudiant.edit');
 Route::put('/etudiant/update/{etudiant}', [EtudiantController::class, 'update'])->name('etudiant.update');
 Route::delete('/etudiant/delete/{etudiant}', [EtudiantController::class, 'destroy'])->name('etudiant.delete');
 
-Route::get('/ville', [VilleController::class, 'index'])->name('indexVille');
+
 

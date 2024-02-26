@@ -6,7 +6,7 @@
         @forelse ($ville as $villes)
             <div class="col-md-4">
                 <div class="card mb-4">
-                    <div class="card-header bg-dark text-white">
+                    <div class="card-header bg-light">
                         <h5 class="card-title">{{ $villes->nom }}</h5>
                     </div>
                     <div class="card-body bg-light d-flex align-items-center">

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card mb-4">
-                <div class="card-header text-center bg-dark text-white">
+                <div class="card-header text-center bg-light">
                     <h5 class="card-title">{{ $etudiant->nom }}</h5>
                 </div>
                 <div class="card-body bg-light">
@@ -17,7 +17,7 @@
                         <li><strong>Profil Mise à Jour le:</strong> {{ $etudiant->updated_at }}</li>
                     </ul>
                 </div>
-                <div class="card-footer d-flex justify-content-center">
+                <div class="card-footer d-flex justify-content-center bg-light">
                     <a href="{{ route('etudiant.edit', $etudiant->id)}}" class="btn btn-sm btn-outline-success me-2">Edit</a>
                     <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
                         Delete
