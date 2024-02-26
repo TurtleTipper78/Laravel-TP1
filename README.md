@@ -1,3 +1,9 @@
+Liens
+
+https://e2395305.webdev.cmaisonneuve.qc.ca/MaisonneuveE2395305/
+
+https://github.com/TurtleTipper78/Laravel-TP1
+
 Note Laravel-TP1
 
 composer create-project --prefer-dist laravel/laravel MaisonneuveE2395305

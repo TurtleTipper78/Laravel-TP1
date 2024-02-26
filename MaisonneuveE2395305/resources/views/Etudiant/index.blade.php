@@ -18,7 +18,7 @@
                         <li><strong>Profil Mise à Jour le:</strong> <span class="text-muted">{{ $etudiants->updated_at }}</span></li>
                     </ul>
                     <div class="text-center">
-                        <a href="{{ route('etudiant.show', $etudiants->id) }}" class="btn btn-sm btn-outline-primary">Show</a>
+                        <a href="{{ route('Etudiant.show', $etudiants->id) }}" class="btn btn-sm btn-outline-primary">Show</a>
                     </div>
                 </div>
             </div>

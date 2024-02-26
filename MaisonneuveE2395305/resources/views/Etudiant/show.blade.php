@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Étudiant')
+@section('title', 'Étudiant Show')
 @section('content')
     <h1 class="my-5 text-center">Étudiant Show</h1>
     <div class="row justify-content-center">
