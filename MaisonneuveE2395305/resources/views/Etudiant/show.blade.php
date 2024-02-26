@@ -17,35 +17,15 @@
                         <li><strong>Profil Mise à Jour le:</strong> {{ $etudiant->updated_at }}</li>
                     </ul>
                 </div>
-                <div class="card-footer d-flex justify-content-center bg-light">
-                    <a href="{{ route('etudiant.edit', $etudiant->id)}}" class="btn btn-sm btn-outline-success me-2">Edit</a>
-                    <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
-                        Delete
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5 text-danger" id="deleteModalLabel">DELETE</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Are you sure to delete the étudiant: {{ $etudiant->nom }}?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <form id="deleteForm" action="{{ route('etudiant.delete', $etudiant->id) }}" method="POST">
+                <div class="card-footer d-flex justify-content-between">
+                    <a href="{{ route('etudiant.edit', $etudiant->id)}}" class="btn btn-sm btn-outline-success">Edit</a>
+                    <!-- Form for delete action -->
+                    <form action="{{ route('etudiant.delete', $etudiant->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure you want to delete this Étudiant?')">Delete</button>
                     </form>
-                </div>
+                </div> 
             </div>
         </div>
     </div>

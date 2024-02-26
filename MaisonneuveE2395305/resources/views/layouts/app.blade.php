@@ -1,38 +1,67 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ config('app.name') }} - @yield('title')</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<title>{{ config('app.name') }} - @yield('title')</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style> 
+    .navbar {
+        margin-bottom: 50px;
+        border-radius: 0;
+    }
+    
+    .jumbotron {
+        margin-bottom: 0;
+    }
+
+    /* Add a gray background color and some padding to the footer */
+    footer {
+        background-color: #f2f2f2;
+        padding: 25px;
+    }
+</style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-light bg-light flex-md-column" aria-label="Third navbar example">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="{{ route('etudiant.index') }}">{{ config('app.name') }}</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav me-auto mb-2 mb-sm-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">Menu</a>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="{{ route('etudiant.create') }}">Ajouter étudiant</a></li>
-                                <li><a class="dropdown-item" href="{{ route('etudiant.index') }}">Liste des étudiant</a></li>
-                                <li><a class="dropdown-item" href="{{ route('ville.index') }}">Liste des ville</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        @yield('content')
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>Laravel-TP1</h1>      
+    <p>Fabien Turgeon</p>
+  </div>
+</div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
     </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="{{ route('etudiant.index') }}">Home</a></li>
+        <li><a class="dropdown-item" href="{{ route('etudiant.create') }}">Ajouter étudiant</a></li>
+        <li><a class="dropdown-item" href="{{ route('etudiant.index') }}">Liste des étudiant</a></li>
+        <li><a class="dropdown-item" href="{{ route('ville.index') }}">Liste des ville</a></li>
+      </ul>
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+      </ul> -->
+    </div>
+  </div>
+</nav>
+
+    <div class="container d-flex align-items-center">
+    @yield('content')
+    </div>
+
     <footer class="footer-light bg-light">
         <div class="container text-center">
             &copy; {{ date('Y') }} {{ config('app.name') }}. Fabien Turgeon.
@@ -41,4 +70,4 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
 </script>
-</html>
+</html> 
